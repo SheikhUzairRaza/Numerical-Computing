@@ -68,3 +68,5 @@ print(Y[:,1])
 print(Y[:,[1,2]])
 print(Y[:,[1,2]].shape)
 
+
+
