@@ -117,6 +117,7 @@ print( x > y )
 def basic_sigmoid(x):
     
     """
+    
     Compute sigmoid of x.
         
     Arguments:
@@ -150,4 +151,5 @@ print(basic_sigmoid(8)) #when x is tending towards positive infinity or we can s
 x =  np.array([1,4,6]) #NumPy is intelligent enough to compute e^-x even if x is an array.
 print(basic_sigmoid(x))
 
-#Lists and arrays may look similar visually, but internally they are completely different in representation, and their code behavior also differs significantly...~
+#Lists and arrays may look similar visually, but internally they are completely different in representation, and their code behavior also differs significantly...
+
