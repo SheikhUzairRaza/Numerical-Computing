@@ -1,4 +1,4 @@
-import numpy as np 
+import numpy as np, math
 M = np.zeros((3,5)) 
 print(M)
 
@@ -100,8 +100,54 @@ print(a.reshape(7,1).T.shape)
 print(np.sqrt(36))
 
 # works on both scalars and arrays
-x = [1,4,9,16]
+x = [1,4,9,16] # Rank-1 tensor
 print(np.sqrt(x))
 
 d=[[1,9,25],[4,5,7]]
 print(np.sqrt(d))
+
+x = np.array([1,2,4,5,9,3])
+print(x>3) #returns a boolean type array
+y = np.array([0,2,3,1,10,3])
+print( x > 3 ) #returns a boolean type array
+print( x > y )
+
+#*Let us assume we want to find employees whose salaries are above 50k...
+
+def basic_sigmoid(x):
+    
+    """
+    Compute sigmoid of x.
+        
+    Arguments:
+     
+    x -- A scalar
+    
+    Return :
+    
+    s -- sigmoid(x)
+
+    """
+    
+    #e ** (-infinite) = 0
+    #e ** (infinite) = infinite
+    
+    s = 1./(1. + math.e ** (-x))
+    return s
+
+
+help(basic_sigmoid) ## returns docstring
+
+print(basic_sigmoid(-1))
+print(basic_sigmoid(0))
+print(basic_sigmoid(8)) #when x is tending towards positive infinity or we can say limit x -> infinity (basic_sigmoid) it is 1 
+# x=[1,4,6]
+# print(basic_sigmoid(x))
+# TypeError: bad operand type for unary -: 'list' 
+#we can fix the error by iteration(loop),control statements and store it in a list and return that ....
+
+#we can also use numpy array for this purpose
+x =  np.array([1,4,6]) #NumPy is intelligent enough to compute e^-x even if x is an array.
+print(basic_sigmoid(x))
+
+#Lists and arrays may look similar visually, but internally they are completely different in representation, and their code behavior also differs significantly...~
