@@ -16,6 +16,6 @@ print(x/x_norm)
 # no need to reshpae again
 
 x_norm = np.linalg.norm(x,ord = 2,axis = 1 ,keepdims = True)
-
+print(x_norm)
 print(x/x_norm)
 help(np.linalg.norm)
